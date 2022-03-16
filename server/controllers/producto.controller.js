@@ -6,11 +6,11 @@ module.exports.findAllProductos = (req, res) => {
     .catch(err => res.json({ message: "Something went wrong", error: err }));
 };
 
-// module.exports.findOneSingleUser = (req, res) => {
-// 	User.findOne({ _id: req.params.id })
-// 		.then(oneSingleUser => res.json({ user: oneSingleUser }))
-// 		.catch(err => res.json({ message: "Something went wrong", error: err }));
-// };
+module.exports.findOneSingleProducto = (req, res) => {
+	Producto.findOne({ _id: req.params.id })
+		.then( producto => res.json({ producto }))
+		.catch(err => res.json({ message: "Something went wrong", error: err }));
+};
 
 module.exports.createNewProducto = (req, res) => {
   Producto.create(req.body)
