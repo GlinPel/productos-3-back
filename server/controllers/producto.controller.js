@@ -18,14 +18,14 @@ module.exports.createNewProducto = (req, res) => {
     .catch(err => res.json({ message: "Something went wrong", error: err }));
 };
 
-// module.exports.updateExistingUser = (req, res) => {
-//   User.findOneAndUpdate({ _id: req.params.id }, req.body, { new: true })
-//     .then(updatedUser => res.json({ user: updatedUser }))
-//     .catch(err => res.json({ message: "Something went wrong", error: err }));
-// };
+module.exports.updateExistingProducto = (req, res) => {
+  Producto.findOneAndUpdate({ _id: req.params.id }, req.body, { new: true })
+    .then( producto => res.json({ producto }))
+    .catch(err => res.json({ message: "Something went wrong", error: err }));
+};
 
-// module.exports.deleteAnExistingUser = (req, res) => {
-//   User.deleteOne({ _id: req.params.id })
-//     .then(result => res.json({ result: result }))
-//     .catch(err => res.json({ message: "Something went wrong", error: err }));
-// };
+module.exports.deleteAnExistingProducto = (req, res) => {
+  Producto.deleteOne({ _id: req.params.id })
+    .then( producto  => res.json({ producto }))
+    .catch(err => res.json({ message: "Something went wrong", error: err }));
+};
